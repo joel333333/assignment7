@@ -1,69 +1,70 @@
-const leftPattern = n => {  //while using arrow function no need to use function keyword
-        for(let i = 1;i <= n;i++) { //assigning 1 for i to intiate loop
-            let line = ''; //adding star with previous iteration value
-            for(j = 1;j <= i; j++) { //nested loop for make a pattern
-                line += '* ';
-            }
-            console.log(line); //Prints left pattern
-            //console.log('');
+//Here is the logical code to generate a diamond pattern 
+//arrow function, nested loops are used
+const createDiamond = (size) => {
+    for (let i = 1; i <= size; i++) {
+        let line = '';
+        
+        for (let j = size; j > i; j--) {
+            line += ' ';
         }
-        console.log('');
+        for (let k = 1; k <= (2 * i - 1); k++) {
+            line += '*';
+        }
+        
+        console.log(line);
     }
-    
-    const rightPattern = n => {
-        for(let i = n;i >= 0;i--) {
-            let line = '';
-            for(j = 1;j <= i; j++) {
-                line += '* ';
-            }
-            console.log(line); //prints five * on top right pattern 
-            //console.log('');
+    for (let i = size - 1; i >= 1; i--) {
+        let line = '';
+        for (let j = size; j > i; j--) {
+            line += ' ';
         }
+        for (let k = 1; k <= (2 * i - 1); k++) {
+            line += '*';
+        }
+        console.log(line);
     }
-    
-    const pyramidPattern = n => {
-        for (let i = 1; i <= n; i++) {
-            let line = '';
-            // Add spaces before the stars
-            for (let j = 1; j <= n - i; j++) {
-                line += ' ';
-            }
-            // Add stars
-            for (let k = 1; k <= 2 * i - 1; k++) {
-                line += '*';
-            }
-            console.log(line);
-        }
-    };
-    var leftpattern = prompt("Enter Lines for left pattern : ");
-    leftPattern(leftpattern);
-    var rightpattern = prompt("Enter Lines for left pattern : ");
-    rightPattern(rightpattern);
-    var pyramidpattern = prompt("Enter Lines for left pattern : ");
-    pyramidPattern(pyramidpattern);
+}
+var size = prompt("Enter value to generate diamond pattern : ");
+createDiamond(size);
 
-
-
-
-//     Output of the code is given below 
-
-//     Enter Lines for left pattern :5
-// * 
-// * * 
-// * * * 
-// * * * * 
-// * * * * * 
-
-// Enter Lines for left pattern :5
-// * * * * * 
-// * * * * 
-// * * * 
-// * * 
-// * 
-
-// Enter Lines for left pattern :5
-//     *
-//    ***
-//   *****
-//  *******
-// *********
+// output
+// Enter value to generate diamond pattern : 20
+//                    *
+//                   ***
+//                  *****
+//                 *******
+//                *********
+//               ***********
+//              *************
+//             ***************
+//            *****************
+//           *******************
+//          *********************
+//         ***********************
+//        *************************
+//       ***************************
+//      *****************************
+//     *******************************
+//    *********************************
+//   ***********************************
+//  *************************************
+// ***************************************
+//  *************************************
+//   ***********************************
+//    *********************************
+//     *******************************
+//      *****************************
+//       ***************************
+//        *************************
+//         ***********************
+//          *********************
+//           *******************
+//            *****************
+//             ***************
+//              *************
+//               ***********
+//                *********
+//                 *******
+//                  *****
+//                   ***
+//                    *
